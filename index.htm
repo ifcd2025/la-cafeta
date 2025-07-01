@@ -14,7 +14,8 @@ QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="a
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary shadow-sm">
+    <!-- con sticky-top el nav siempre es visible -->
+    <nav class="navbar navbar-expand-sm bg-body-tertiary shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold ps-4" href="#">
                 <i class="bi bi-cup-hot-fill text-primary"></i>
@@ -148,11 +149,104 @@ QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="a
             </button>
         </div>
     </section>
-
-    <section class="w-50 m-auto shadow">
-        <h2 class="text-center bg-primary text-white">Consigue tu cafetera</h2>
+    <!-- las clases col están pensadas para usar en container y row
+     pero a veces también podemos usarlas para dar tamaños a cajas.
+     Como el h1 tiene color de fondo y está pegado al borde, no se ve
+     el borde redondeado superior salvo que usemos overflow-hidden -->
+    <section class="col-4 m-auto shadow mt-4 rounded-3 overflow-hidden mb-4 text-center pb-5 bg-body-tertiary">
+        <h2 class="bg-primary text-white">Consigue tu cafetera</h2>
+        <p class="h1 mt-4">249€</p>
+        <p>Envío gratuito 14/48h</p>
+        <!-- con list-unstyled le quitamos los puntos a la lista -->
+        <ul class="list-unstyled">
+            <li><i class="bi bi-check2 text-success"></i>Cafetera inteligente La Cafeta</li>
+            <li><i class="bi bi-check2 text-success"></i>Filtro reutilizable de acero</li>
+            <li><i class="bi bi-check2 text-success"></i>Acceso a la App Premium</li>
+            <li><i class="bi bi-check2 text-success"></i>Garantía de 2 años</li>
+        </ul>
+        <a href="" class="btn btn-primary m-auto mb-3 w-75 d-block">Añadir al carrito</a>
+        <!-- Fontawesome tiene icono para cada tarjeta de crédito.
+         Bootstrap icons no, con lo que vamos a usar iconos genéricos -->
+        <!-- Las clase h1, h2,.... se pueden usar en cualquier sitio
+          para cambiar el tamaño de la letra -->
+        <i class="bi bi-credit-card h4 me-2"></i>
+        <i class="bi bi-credit-card-fill h4 me-2"></i>
+        <i class="bi bi-credit-card-2-back h4 me-2"></i>
+        <i class="bi bi-credit-card-2-front h4 me-2"></i>
 
     </section>
+
+    <section class="m-auto p-3 w-50">
+        <h2 class="text-center">¿Tienes dudas?</h2>
+        <p class="text-center">Aquí tienes las respuestas a las preguntas más comunes</p>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        ¿Qué tipo de café puedo usar?
+                    </button>
+                </h2>
+                <!-- Le quitamos la clase show para que no aparezca expandido y
+                 arriba cambiamos aria-expanded de true a false -->
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item’s accordion body.</strong> It is shown by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It’s also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        ¿Cómo se limpia la cafetera?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It’s also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        ¿Cuál es la política de devolución?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It’s also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-body-tertiary p-2 d-flex justify-content-between px-5">
+        <p>&copy; 2025 La Cafeta. Todos los derechos reservados.</p>
+        <div>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
